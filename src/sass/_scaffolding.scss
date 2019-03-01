@@ -1,0 +1,661 @@
+.site, .inner-page { background-color: $black; }
+
+.clear { clear:both; }
+
+        *{
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+
+
+// Vertically center anything
+
+    .vertical-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+
+// Grid
+
+@supports (grid-area: auto) {
+    
+    .site {
+        grid-template-areas: 
+            "intro"
+            "nav"
+            "portfolio"
+            "aboutskills"
+            "experience"
+            "contact"
+            "footer";
+    }
+    
+        .intro {
+            grid-row-start: 1;
+			grid-area: intro;
+		}
+    
+        .intro a, .intro a:visited {
+            text-decoration:none;
+        }
+
+		.portfolio {
+            grid-row-start: 3;
+			grid-area: portfolio;
+		}
+
+		.about-skills {
+            grid-row-start: 4;
+			grid-area: aboutskills;
+		}
+
+		.experience {
+            grid-row-start: 5;
+			grid-area: experience;
+		}
+    
+        .contact {
+            grid-row-start: 6;
+			grid-area: contact;
+		}
+    
+        .footer {
+            grid-row-start: 7;
+            grid-area: footer;
+        }
+
+		.main-nav {
+            grid-row-start: 2;
+			grid-area: nav;
+		}
+    
+    
+@media (min-width:768px) {
+    
+    .site {
+			display: grid;
+            /*grid-gap: 1rem;*/
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            grid-template-columns: 200px repeat(5, 1fr);
+		}
+
+        .main-nav {
+			position: relative;
+			width: 12em;
+			left: -13em;
+            grid-column:1;
+            grid-row:1/9;
+            transition: left .6s;
+            z-index:999;
+		}
+    
+		.reveal .main-nav {
+			left: 0;
+		}
+    
+        .reveal .trigger {
+            left: 14.5em;
+        }
+
+		.main-nav ul {
+			display: none;
+			flex-direction: column;
+		}
+
+		.open ul {
+			display: flex;
+            position: fixed;
+		}
+
+		.trigger {
+			position: fixed;
+			display: block;
+			top: 1.5em;
+			left: -.8em;
+			transition: left .6s;
+		}
+
+		.reveal .trigger {
+			left: 12em;
+		}
+    
+            .intro {
+              grid-row-start: 1;
+              /*grid-row: 1 / 2;*/
+              grid-column: 1 / 3;
+            }
+    
+        .portfolio {
+              grid-row-start: 1;
+              grid-column: 3 / 7;
+            }
+    
+        .portfolio-items {
+              grid-row-start: 1;
+              grid-column: 3 / 7;
+              display: grid;
+              grid-gap: 10px;
+              grid-template-columns: repeat(3, 1fr);
+              grid-template-rows: repeat(3, 1fr);
+            }
+
+            .portfolio-item {
+                width:100%;
+                height:100%;
+            }
+    
+            .portfolio .a {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+            }
+
+            .portfolio .b {
+                grid-column: 2 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .portfolio .c {
+                grid-column: 1 / 3;
+                grid-row: 2/3;
+            }
+
+            .portfolio .d {
+                grid-column: 3 / 4;
+                grid-row: 2 / 3;
+            }
+
+            .portfolio .e {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            } 
+
+            .portfolio .f {
+                grid-column: 2 / 4;
+                grid-row: 3 / 4;
+            }
+    
+        .about-skills { 
+                grid-row-start: 4;
+                /*grid-row: 4 / 5;*/
+                grid-column: 1 / 7; 
+            }
+    
+            .experience {
+              grid-row-start: 6;
+              /*grid-row: 6 / 7;*/
+              grid-column: 1 / 7;
+            }
+        
+            .contact {
+                grid-row-start: 7;
+                grid-column: 1 / 7;
+            }
+
+            .footer {
+              grid-row-start:8;
+              /*grid-row: 7 / 8;*/
+              grid-column: 1 / 7;
+            }
+    
+    }
+    
+    
+    @media (min-width:992px) {
+            .container {
+              grid-template-columns: 200px repeat(5, 1fr);
+              /*grid-template-rows: repeat(6, 1fr) 50px;*/
+            }
+        
+            .intro {
+              grid-row-start: 1;
+              /*grid-row: 1 / 2;*/
+              grid-column: 1 / 3;
+            }
+        
+            .portfolio {
+              grid-row-start: 1;
+              grid-column: 3 / 7;
+            }
+
+            .portfolio-items {
+              grid-row-start: 1;
+              grid-column: 3 / 7;
+              display: grid;
+              grid-gap: 10px;
+              grid-template-columns: repeat(3, 1fr);
+              grid-template-rows: repeat(4, 1fr);
+            }
+
+            .portfolio-item {
+                width:100%;
+                height:100%;
+            }
+
+            .portfolio .a {
+                grid-column: 1 / 2;
+                grid-row: 1/3;
+            }
+
+            .portfolio .b {
+                grid-column: 2 / 4;
+                grid-row: 1 / 2;
+            }
+
+            .portfolio .c {
+                grid-column: 1 / 2;
+                grid-row: 3/4;
+            }
+
+            .portfolio .d {
+                grid-column: 2 / 3;
+                grid-row: 2/4;
+            }
+
+            .portfolio .e {
+                grid-column: 1 / 3;
+                grid-row: 4/5;
+            }
+
+            .portfolio .f {
+                grid-column: 3 / 4;
+                grid-row: 2/5;
+            }
+        
+            .about-skills { 
+                grid-row-start: 5;
+                /*grid-row: 4 / 5;*/
+                grid-column: 1 / 7; 
+            }
+
+            .about {
+            
+              /*grid-row: 5 / 6;
+              grid-column: 1 / 4;*/
+            }
+
+            .skills {
+            
+              /*grid-row: 5 / 6;
+              grid-column: 4 / 7;*/
+            }
+
+            .experience {
+              grid-row-start: 6;
+              /*grid-row: 6 / 7;*/
+              grid-column: 1 / 7;
+            }
+        
+            .contact {
+                grid-row-start: 7;
+                grid-column: 1 / 7;
+            }
+
+            .footer {
+              grid-row-start:8;
+              /*grid-row: 7 / 8;*/
+              grid-column: 1 / 7;
+            }
+    }
+}
+        
+// Portfolio Items Grid
+
+@media (min-width:767px) {
+        .item {
+          color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          font-size: 18px;
+          font-weight: bold;
+        }
+    }
+
+
+// Layout Design
+
+        .intro { 
+            padding: 1em 1em 0 1em;
+            text-align:center;
+        }
+
+        @media (min-width:768px) {
+            .intro { 
+              position: relative;
+              top: 36%;
+              /*transform: translateY(-50%);*/
+            }
+            .portfolio { margin-left: -50px; }
+        }
+
+        @media (min-width:992px) {
+            .intro { 
+              position: relative;
+              top: 44%;
+              /*transform: translateY(-50%);*/
+            }
+        }
+
+        .intro-img {
+            width:200px;
+            border-radius: 100px;
+            margin:auto;
+        }
+
+        .intro-img img { width:200px; border: 8px solid $white; }
+
+        .portfolio h2 { 
+            padding-bottom:15px;
+            }
+
+            @media (max-width:766px) {
+            .portfolio h2 { 
+                padding-left:15px;
+            }
+            }
+
+        .portfolio-item {
+            padding:15px;
+            text-align: center;
+        }
+
+        @media (max-width:767px) {
+            .portfolio-item {   
+                    margin-bottom: 1em;
+                }
+
+            .about {
+                margin-bottom: 3em;
+            }
+
+            .contact {
+                margin-bottom:3em;
+            }
+        }
+
+        .portfolio { 
+            .a { background-color: $yellow; }
+            .b { background-color: $blue; }
+            .c { background-color: $purple; }
+            .d { background-color: $red; }
+            .e { background-color: $orange; }
+            .f { background-color: $teal; }
+            
+            .title { 
+                font-family: $header; 
+                color: $black; 
+            }
+            
+            .desc { 
+                font-family: $font-family; 
+                color: $black;  
+                margin-bottom: 0;
+            }
+        }
+
+        .portfolio {
+            .a {
+                background:
+                linear-gradient(
+                  rgba(226,174,57, 0.75), 
+                  rgba(226,174,57, 0.75)
+                ),
+                url('../images/portfolio-preview/goodsam-sm.jpg');
+                transition: opacity 2s linear;
+            }
+            
+            .b {
+                        background:
+                        linear-gradient(
+                          rgba(81,172,189, 0.75), 
+                          rgba(81,172,189, 0.75)
+                        ),
+                        url('../images/portfolio-preview/fleetfeettraining-sm.jpg');
+            }
+            .c {
+                        background:
+                        linear-gradient(
+                          rgba(101,89,211, 0.75), 
+                          rgba(101,89,211, 0.75)
+                        ),
+                        url('../images/portfolio-preview/springfieldsliders-sm.jpg');
+            }
+            .d {
+                        background:
+                        linear-gradient(
+                          rgba(237,20,91, 0.75), 
+                          rgba(237,20,91, 0.75)
+                        ),
+                        url('../images/portfolio-preview/kiramar-sm.jpg');
+                    }
+                
+            .e {
+                        background:
+                        linear-gradient(
+                          rgba(238,102,43, 0.75), 
+                          rgba(238,102,43, 0.75)
+                        ),
+                        url('../images/portfolio-preview/rate5-sm.jpg');
+                    }
+                    
+            .f {
+                        background:
+                        linear-gradient(
+                          rgba(0,168,122, 0.75), 
+                          rgba(0,168,122, 0.75)
+                        ),
+                        url('../images/portfolio-preview/dsbuilders-sm.jpg');
+                    }
+        }
+
+        .portfolio {
+            .a:hover, .a:target { background: $yellow; }
+            .b:hover, .b:target { background: $blue; }
+            .c:hover, .c:target { background: $purple; }
+            .d:hover, .d:target { background: $red; }
+            .e:hover, .e:target { background: $orange; }
+            .f:hover, .f:target { background: $teal; }
+        }
+
+        @media (min-width:768px){
+            .portfolio {
+                    .a {
+                        background:
+                        linear-gradient(
+                          rgba(226,174,57, 0.75), 
+                          rgba(226,174,57, 0.75)
+                        ),
+                        url('../images/portfolio-preview/goodsam-md.jpg');
+                    }
+                
+                    .b {
+                        background:
+                        linear-gradient(
+                          rgba(81,172,189, 0.75), 
+                          rgba(81,172,189, 0.75)
+                        ),
+                        url('../images/portfolio-preview/fleetfeettraining-md.jpg');
+                    }
+                
+                    .c {
+                        background:
+                        linear-gradient(
+                          rgba(101,89,211, 0.75), 
+                          rgba(101,89,211, 0.75)
+                        ),
+                        url('../images/portfolio-preview/springfieldsliders-md.jpg');
+                    }
+                
+                    .d {
+                        background:
+                        linear-gradient(
+                          rgba(237,20,91, 0.75), 
+                          rgba(237,20,91, 0.75)
+                        ),
+                        url('../images/portfolio-preview/kiramar-md.jpg');
+                    }
+                
+                    .e {
+                        background:
+                        linear-gradient(
+                          rgba(238,102,43, 0.75), 
+                          rgba(238,102,43, 0.75)
+                        ),
+                        url('../images/portfolio-preview/rate5-md.jpg');
+                    }
+                    
+                    .f {
+                        background:
+                        linear-gradient(
+                          rgba(0,168,122, 0.75), 
+                          rgba(0,168,122, 0.75)
+                        ),
+                        url('../images/portfolio-preview/dsbuilders-md.jpg');
+                    }
+                }
+        }
+
+        @media (min-width:992px){
+            .portfolio {
+                    .a {
+                        background:
+                        linear-gradient(
+                          rgba(226,174,57, 0.75), 
+                          rgba(226,174,57, 0.75)
+                        ),
+                        url('../images/portfolio-preview/goodsam-lg.jpg');
+                    }
+                
+                    .b {
+                        background:
+                        linear-gradient(
+                          rgba(81,172,189, 0.75), 
+                          rgba(81,172,189, 0.75)
+                        ),
+                        url('../images/portfolio-preview/fleetfeettraining-lg.jpg');
+                    }
+                
+                    .c {
+                        background:
+                        linear-gradient(
+                          rgba(101,89,211, 0.75), 
+                          rgba(101,89,211, 0.75)
+                        ),
+                        url('../images/portfolio-preview/springfieldsliders-lg.jpg');
+                    }
+                
+                    .d {
+                        background:
+                        linear-gradient(
+                          rgba(237,20,91, 0.75), 
+                          rgba(237,20,91, 0.75)
+                        ),
+                        url('../images/portfolio-preview/kiramar-lg.jpg');
+                    }
+                
+                    .e {
+                        background:
+                        linear-gradient(
+                          rgba(238,102,43, 0.75), 
+                          rgba(238,102,43, 0.75)
+                        ),
+                        url('../images/portfolio-preview/rate5-lg.jpg');
+                    }
+                    
+                    .f {
+                        background:
+                        linear-gradient(
+                          rgba(0,168,122, 0.75), 
+                          rgba(0,168,122, 0.75)
+                        ),
+                        url('../images/portfolio-preview/dsbuilders-lg.jpg');
+                    }
+                }
+        }
+
+        .about-skills {
+            background: url('../images/pattern-bg.jpg');
+            padding-top: 2em;
+            padding-bottom: 2em;
+		}
+
+        .about-skills-centered {
+            /*width:96%;
+            margin:auto;*/
+            display: -webkit-box;   
+            display: -moz-box; 
+            display: -ms-flexbox;  
+            display: -webkit-flex;
+            display: flex;  
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            justify-content: center;
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .about,
+        .skills {
+          background-color: $white;
+          padding: 1em 1em;
+        }
+        
+        @media (max-width:767px) {
+            .skills {
+                width:100%;
+            }
+}
+
+        @media (min-width:768px) {
+            .about,
+            .skills {
+              float: left;
+              width:46%;
+              margin-left:1em;
+            }
+            
+            .skills { margin-right:1em; }
+        }
+
+        .experience {
+          padding-top: 2em;
+          padding-bottom: 2em;
+          background-color: #1EAAFC;
+          background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
+            
+            h2 { 
+                color: $white;
+                text-align:center;
+            }
+            
+            h3 { color: $black; }
+        }
+
+        .contact { text-align:center; }
+
+        .contact h2 {
+            padding:2em;
+            display: inline-block;
+            }
+
+@media (min-width:500px) {
+        .contact h2 {
+            padding:50px 100px 50px 50px;
+        }
+}
+
+
+        .footer {
+          padding:20px;
+          background-color: #000;
+          color: $white;
+          text-align:center;
+        }

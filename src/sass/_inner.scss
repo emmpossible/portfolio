@@ -1,0 +1,237 @@
+
+@supports (grid-area: auto) {
+    .inner-page {
+        display:grid;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        grid-template-columns: 200px repeat(5, 1fr);
+    }
+    
+    .inner-page .intro {
+        grid-row-start: 1;
+        grid-column: 1 / 7;
+    }
+    
+    .inner-page .title {
+        grid-row-start: 2;
+        grid-column: 1 / 7;
+    }
+    
+    .inner-page .project-header {
+        grid-row-start: 3;
+        grid-column: 1 / 7;
+    }
+    
+    .inner-page .project-description {
+        grid-row-start: 4;
+        grid-column: 1 / 7;
+    }
+    
+    .inner-page .contact {
+        grid-area: unset;
+        grid-row-start: 5;
+        grid-column: 1 / 7;
+    }
+    
+    .inner-page .footer {
+        grid-area: unset;
+        grid-row-start: 6;
+        grid-column: 1 / 7;
+    }
+    
+    
+    @media(max-width:767px) {
+        .inner-page .intro {
+            grid-row-start: 1;
+            grid-column: 1 / 7;
+        }
+
+        .inner-page .main-nav {
+            grid-row-start: 2;
+            grid-column: 1 / 7;
+            }
+
+        .inner-page .title {
+            grid-row-start: 3;
+            grid-column: 1 / 7;
+        }
+
+        .inner-page .project-description {
+            grid-row-start: 4;
+            grid-column: 1 / 7;
+        }
+        
+        .inner-page .project-header {
+            grid-row-start: 5;
+            grid-column: 1 / 7;
+        }
+
+        .inner-page .contact {
+            grid-area: unset;
+            grid-row-start: 6;
+            grid-column: 1 / 7;
+        }
+
+        .inner-page .footer {
+            grid-area: unset;
+            grid-row-start: 7;
+            grid-column: 1 / 7;
+        }
+    }
+}
+
+// Intro
+
+.inner-page .intro {
+    background: url('../images/pattern-bg.jpg');
+    padding-top: 2em;
+    padding-bottom: 2em;
+    top: 0;
+    transform: none;
+}
+
+.inner-page .yellow {
+    background-color: $yellow;
+}
+
+.inner-page .orange {
+    background-color: $orange;
+}
+
+.inner-page .title h1 {
+    padding:1em;
+    text-align:center;
+}
+
+
+
+// Project Screenshots
+
+    .project-header {
+        position:relative;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1250px;
+    }
+
+    @media (min-width:1200px){
+        .project-header {
+            width: 90%;
+        }
+    }
+
+
+    .feature {
+        text-align: center;
+    }
+
+    .feature .desktop img, .feature .tablet img, .feature .phone img { 
+            width: 100%; 
+            height: auto;
+        }
+
+    @media (min-width:768px) {
+
+        .feature { padding-bottom: 42%; }
+        
+        .feature .desktop, .feature .tablet, .feature .phone, .feature .laptop { 
+            position: absolute; 
+            bottom: 0; 
+        }
+
+        .feature .desktop { 
+            max-width: 60%; 
+            left: 10%; 
+        }
+
+        .feature .tablet { 
+            max-width: 45%; 
+            z-index: 5; 
+            left: 53%; 
+        }
+
+        .feature .laptop { 
+            max-width: 55%; 
+            z-index: 5; 
+            left: 40%; 
+            bottom: -10%; 
+        }
+
+        .feature .phone { 
+            max-width: 13%; 
+            z-index: 5; 
+            left: 3%; 
+        }
+    }
+
+    @media handheld, screen and (max-width: 768px){
+        .feature {
+            margin: 2em 2em 0 2em;
+        }
+        
+        .feature .desktop, .feature .tablet, .feature .phone {
+            position: relative;
+            left: 0;
+            bottom: 0;
+            max-width: 100%;
+            padding: 0 0 2em;
+        }
+    }
+
+
+// Project Description
+
+.project-description {
+    background-color: $white;
+    padding: 3em;
+    margin-top:3em;
+    margin-left:3em;
+    margin-right:3em;
+
+
+        .left, .content {
+            display:block;
+            margin-bottom:3em;
+        }
+    }
+
+    @media (min-width:768px) {
+        
+    .project-description {
+        .left { 
+            float:left; 
+            width:35%; 
+            padding-right:2em; 
+            margin-bottom:0;
+        }
+
+        .content { 
+            float:left; 
+            width: 60%; 
+            margin-bottom:0;
+        }
+        }
+    }
+
+    .project-description {
+    .left .goodsam-logo ,
+    .left rate5-logo { 
+        display: block; 
+        max-width: 229px; 
+        margin: auto; 
+        padding-bottom: 2em; 
+    }
+
+    .left .goodsam-logo img, 
+    .left .rate5 img { 
+        display: block; 
+        width: 100%; 
+        margin: auto; 
+    }
+
+    .notes { 
+        color: $gray; 
+        font-size: .75em; 
+    }
+}

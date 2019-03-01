@@ -1,0 +1,59 @@
+.main-nav {
+	padding: 1em;
+	font-size: 1.1em;
+	color: white;
+    background-color: hsl(0, 0%, 10%);
+}
+
+.trigger {
+    position: fixed;
+	display: none;
+    top: 1.5em;
+    left: .2em;
+	padding: .1em .5em;
+	color: white;
+	background: hsl(0, 0%, 10%);
+	border: none;
+	transform: rotate(-90deg);
+}
+
+.trigger:focus,
+.trigger:hover {
+	outline: 2px dotted hsl(0, 0%, 10%);
+}
+
+.trigger:focus {
+	outline-color: white;
+}
+
+.main-nav ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.open ul {
+    display:flex;
+}
+
+@media (min-width:767px) {
+    .main-nav ul {
+        /*position: fixed;*/
+        top: 0;
+    }
+}
+
+.main-nav a {
+	display: block;
+	padding: .4em 1em;
+	color: white;
+	text-decoration: none;
+}
+
+.main-nav a:focus,
+.main-nav a:hover {
+	text-decoration: underline;
+}

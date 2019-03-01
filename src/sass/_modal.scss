@@ -1,0 +1,144 @@
+.portfolio-modal {
+    position: fixed;
+    z-index: 10;
+    top: 2em;
+    bottom: 2em;
+    left:2em;
+    right: 2em;
+    background-color: $black;
+    box-shadow: 0 0 0 5em rgba(#000, .5);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+    
+    &.is-open {
+        display: block;
+    }
+}
+
+.modal-close {
+    background: $white;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    border: 0;
+    width: 2em;
+    height: 2em;
+    padding: 5px 0 0;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba($black, .8);
+}
+
+.portfolio-header {
+  text-align: left;
+  padding: 5em 0;
+  margin-bottom: 2em;
+  background-size: cover;
+  background-position: center;
+}
+
+.header-goodsam {
+  background-image: url(../images/portfolio/goodsam-header.jpg);
+}
+
+.header-ffbooklet {
+  background-image: url(../images/portfolio/ffbooklet-header.jpg);
+}
+
+.header-sliders {
+  background-image: url(../images/portfolio/sliders-header.jpg);
+}
+
+.header-kiramar {
+  background-image: url(../images/portfolio/kira-mar-header.jpg);
+}
+
+.header-rate5 {
+  background-image: url(../images/portfolio/rate5-header.jpg);
+}
+
+.header-dsbuilders {
+  background-image: url(../images/portfolio/dsbuilders-header.jpg);
+}
+
+.portfolio-title-box {
+    padding: 3em 0 3em 3em;
+    color: $white;
+    width: 70%;
+    
+    &.goodsam {
+        background: rgba($yellow, .75);
+    }
+    
+    &.ffbooklet {
+        background: rgba($blue, .75);
+    }
+    
+    &.kiramar {
+        background: rgba($red, .75);
+    }
+    
+    &.sliders {
+        background: rgba($purple, .75);
+    }
+    
+    &.rate5 {
+        background: rgba($orange, .75);
+    }
+    
+    &.dsbuilders {
+        background: rgba($teal, .75);
+    }
+    
+    .portfolio-title {
+        font-size: 3.5rem;
+    }
+    
+    .portfolio-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+.portfolio-content {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    color: $white;
+}
+
+.portfolio-full-width {
+    width: 100vw;
+    max-width: initial;
+    margin: 2em calc(50% - 50vw);
+    height:20vh;
+    object-fit: cover;
+}
+
+.portfolio-img {
+        max-width: 100%;
+        padding-bottom: 2em
+}
+
+@media (min-width: 40em) {
+    .portfolio-pull-left {
+        width: 65%;
+        float:left;
+        margin-right: 2em;
+        padding-top:1em;
+    }
+    
+    .portfolio-pull-right {
+        width: 65%;
+        float:right;
+        margin-left: 2em;
+    }
+    
+        .portfolio-pull-center {
+        width: 65%;
+        margin: 0 auto;
+        text-align:center;
+    }
+}
