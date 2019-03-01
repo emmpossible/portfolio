@@ -19,6 +19,14 @@
 
 
 
+// Header area
+.title { margin-bottom: .5em; }
+
+.social img { width:28px; }
+
+.social img:first-child { padding-right: 5px; }
+
+
 // Grid
 
 @supports (grid-area: auto) {
